@@ -1,0 +1,32 @@
+name: 'linkedin_connectors'
+version: '1.0.0'
+
+profile: 'linkedin_connectors'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:         # directories to be removed by `dbt clean`
+  - "target"
+  - "dbt_packages"
+
+models:
+  linkedin_connectors:
+    linkedin:
+      +materialized: table
+
+# Define variables here
+vars:
+  account_history_identifier: account_history
+  creative_history_identifier: creative_history
+  campaign_history_identifier: campaign_history
+  campaign_group_history_identifier: campaign_group_history
+  ad_analytics_by_creative_identifier: ad_analytics_by_creative
+  ad_analytics_by_campaign_identifier: ad_analytics_by_campaign
+  conversion_history_identifier: conversion_history
+  conversion_associated_campaign_identifier: conversion_associated_campaign
+

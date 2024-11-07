@@ -1,0 +1,21 @@
+version: 2
+sources:
+  - name: linkedin
+    schema: "{{ var('linkedin_schema', target.dataset) }}"
+    tables:
+      - name: account_history
+        identifier: "{{ var('account_history_identifier', 'account_history') }}"
+      - name: creative_history
+        identifier: "{{ var('creative_history_identifier', 'creative_history') }}"
+      - name: campaign_history
+        identifier: "{{ var('campaign_history_identifier', 'campaign_history') }}"
+      - name: campaign_group_history
+        identifier: "{{ var('campaign_group_history_identifier', 'campaign_group_history') }}"
+      - name: ad_analytics_by_creative
+        identifier: "{{ var('ad_analytics_by_creative_identifier', 'ad_analytics_by_creative') }}"
+      - name: ad_analytics_by_campaign
+        identifier: "{{ var('ad_analytics_by_campaign_identifier', 'ad_analytics_by_campaign') }}"
+      - name: conversion_history
+        identifier: "{{ var('conversion_history_identifier', 'conversion_history') }}"
+      - name: conversion_associated_campaign
+        identifier: "{{ var('conversion_associated_campaign_identifier', 'conversion_associated_campaign') }}"
